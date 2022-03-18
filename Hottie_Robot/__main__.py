@@ -78,14 +78,14 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/7153ff6d5a0e2711f24d7.jpg) 」────
+────「 [{}](https://telegra.ph/file/e6caec4d165a90147fb57.jpg) 」────
 *Whassup! {},*
-*I am an Anime themed advance group management bot with a lot of Hot Features.*
+*Mən adım ERROR qrup nəzarət botuyam.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
 • `{}` *users, across* `{}` *chats.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-➢ Try The Help Buttons Below To Know My Abilities ❃❃
+➢ Bacarıqlarımı bilmək üçün aşağıdakı düymələrlə sınayın ❃❃
 """
 
 buttons = [
@@ -97,24 +97,24 @@ buttons = [
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
         InlineKeyboardButton(
-            text="❔ Chit Chat", url="https://t.me/Anime_python_coding"
+            text="❔ Chit Chat", url="https://t.me/YerAltiChat"
         ),
         InlineKeyboardButton(text="[► Inline ◄]", switch_inline_query_current_chat=""),
     ],
     [
-        InlineKeyboardButton(text="❄️ Support", url=f"https://t.me/{SUPPORT_CHAT}"),
-        InlineKeyboardButton(text="☃️ Updates", url="https://t.me/Hottie_Updates"),
+        InlineKeyboardButton(text="❄️ Support", url=f"https://t.me/YerAltiChat"),
+        InlineKeyboardButton(text="☃️ Developer", url="https://t.me/ozuduqaqaw"),
     ],
 ]
 
 
 HELP_STRINGS = """
-Main commands available[.](https://telegra.ph//file/81b18388bd4bcde77af22.jpg)
- ➢ /help: PM's you this message.
- ➢ /help <module name>: PM's you info about that module.
- ➢ /donate: information on how to donate!
+Main commands available[.](https://telegra.ph/file/e6caec4d165a90147fb57.jpg)
+ ➢ /help: Kömək menyusu
+ ➢ /help <module adı>: Həmin modul haqqında məlumat
+ ➢ /donate: İanə etmək üçün məlumat!
  ➢ /settings:
-   ❃ in PM: will send you your settings for all supported modules.
+   ❃ in PMün Bütün modullara dəstək göndərəcək.
    ❃ in a group: will redirect you to pm, with all that chat's
 """.format(
     dispatcher.bot.first_name,
@@ -124,8 +124,8 @@ Main commands available[.](https://telegra.ph//file/81b18388bd4bcde77af22.jpg)
 )
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-HOTTIE_IMG = "https://telegra.ph/file/08b3256ecac791444cbf2.jpg"
-HELP_IMG = "https://telegra.ph/file/69866f641bc97c73d146b.jpg"
+HOTTIE_IMG = "https://telegra.ph/file/e6caec4d165a90147fb57.jpg"
+HELP_IMG = "https://telegra.ph/file/e6caec4d165a90147fb57.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Click here to donate in [Paypal](https://ko-fi.com/aasfcyberking)"""
@@ -256,11 +256,11 @@ def start(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="🚑 Support",
-                            url=f"https://telegram.dog/{SUPPORT_CHAT}",
+                            url=f"https://t.me/YerAltiChat",
                         ),
                         InlineKeyboardButton(
                             text="📢 Updates",
-                            url="https://t.me/Hottie_Updates",
+                            url="https://t.me/ozuduqaqaw",
                         ),
                     ]
                 ]
@@ -339,7 +339,7 @@ def help_button(update, context):
             next_page = int(next_match.group(1))
             query.message.edit_text(
                 text=HELP_STRINGS,
-                parse_mode=ParseMode.MARKDOWN,
+                parse_mode=ParseMode.MARKDOWN,(
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, HELPABLE, "help")
                 ),
